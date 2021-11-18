@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Symulator_ukladow_logicznych"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Symulator układów logicznych" Height="350" Width="500" MinHeight="350" MinWidth="500">
     <Grid>
-        
+        <DockPanel LastChildFill="False">
+
+            <!-- Menu -->
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File" >
+                    <MenuItem Header="_New"></MenuItem>
+                    <MenuItem Header="_Open"></MenuItem>
+                    <MenuItem Header="_Save"></MenuItem>
+                    <Separator></Separator>
+                    <MenuItem Header="_Exit"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="_Edit">
+                    <MenuItem Header="_Options"></MenuItem>
+                </MenuItem>
+            </Menu>
+
+            <!-- Zasobnik -->
+            <Button VerticalAlignment="Bottom" Width="100">AND</Button>
+            <Button VerticalAlignment="Bottom" Width="100">NOT</Button>
+            <Button VerticalAlignment="Bottom" Width="100">NAND</Button>
+            <Button VerticalAlignment="Bottom" Width="100">OR</Button>
+            <Button VerticalAlignment="Bottom" Width="100" Background="#FFDDDDDD">XOR</Button>
+
+        </DockPanel>
     </Grid>
 </Window>
