@@ -5,31 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Symulator_ukladow_logicznych"
         mc:Ignorable="d"
-        Title="Symulator układów logicznych" Height="350" Width="500" MinHeight="350" MinWidth="500">
+        Title="Symulator układów logicznych" Height="450" Width="800">
     <Grid>
-        <DockPanel LastChildFill="False">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
 
-            <!-- Menu -->
-            <Menu DockPanel.Dock="Top">
-                <MenuItem Header="_File" >
-                    <MenuItem Header="_New"></MenuItem>
-                    <MenuItem Header="_Open"></MenuItem>
-                    <MenuItem Header="_Save"></MenuItem>
-                    <Separator></Separator>
-                    <MenuItem Header="_Exit"></MenuItem>
-                </MenuItem>
-                <MenuItem Header="_Edit">
-                    <MenuItem Header="_Options"></MenuItem>
-                </MenuItem>
-            </Menu>
+        <Canvas Name="canvas" Background="Aqua" Grid.RowSpan="3" Grid.ColumnSpan="3" PreviewMouseMove="canvasPreviewMouseMove" PreviewMouseUp="canvasPreviewMouseUp">
+            <Button Content="XOR" Canvas.Left="359" Canvas.Top="379" Width="75" Tag="btnXOR" Click="createGate"></Button>
+            <Button Content="OR" Canvas.Left="279" Canvas.Top="379" Width="75" Tag="btnOR" Click="createGate"></Button>
+            <Button Content="NAND" Canvas.Left="199" Canvas.Top="379" Width="75" Tag="btnNAND" Click="createGate"></Button>
+            <Button Content="NOT" Canvas.Left="119" Canvas.Top="379" Width="75" Tag="btnNOT" Click="createGate"></Button>
+            <Button Content="AND" Canvas.Left="39" Canvas.Top="379" Width="75" Tag="btnAND" Click="createGate"></Button>
 
-            <!-- Zasobnik -->
-            <Button VerticalAlignment="Bottom" Width="100">AND</Button>
-            <Button VerticalAlignment="Bottom" Width="100">NOT</Button>
-            <Button VerticalAlignment="Bottom" Width="100">NAND</Button>
-            <Button VerticalAlignment="Bottom" Width="100">OR</Button>
-            <Button VerticalAlignment="Bottom" Width="100" Background="#FFDDDDDD">XOR</Button>
-
-        </DockPanel>
+        </Canvas>
     </Grid>
 </Window>
