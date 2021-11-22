@@ -49,7 +49,7 @@ namespace Symulator_ukladow_logicznych
         {
             Rectangle rect = new Rectangle();
 
-            switch ((string)((Button)sender).Tag)
+            switch ((string)((MenuItem)sender).Tag)
             {
                 case "btnAND":
                     rect.Fill = Brushes.Red;

@@ -5,26 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Symulator_ukladow_logicznych"
         mc:Ignorable="d"
-        Title="Symulator układów logicznych" Height="450" Width="800">
+        Title="Symulator układów logicznych" Height="720" Width="1280" MinHeight="670" MinWidth="800" Background="#1E1E1E">
     <Grid>
+        <Canvas Name="canvas" PreviewMouseMove="canvasPreviewMouseMove" PreviewMouseUp="canvasPreviewMouseUp" Background="#242526" Grid.ColumnSpan="4" Grid.RowSpan="3" Margin="0,28,0,0">
+            <Canvas.ContextMenu>
+                <ContextMenu>
+                    <MenuItem HorizontalContentAlignment="Center">
+                        <MenuItem.Header>
+                            <AccessText>_Add</AccessText>
+                        </MenuItem.Header>
+                        <MenuItem Header="_AND" Tag="btnAND" Click="createGate"></MenuItem>
+                        <MenuItem Header="_NOT" Tag="btnNOT" Click="createGate"></MenuItem>
+                        <MenuItem Header="_NAND" Tag="btnNAND" Click="createGate"></MenuItem>
+                        <MenuItem Header="_OR" Tag="btnOR" Click="createGate"></MenuItem>
+                        <MenuItem Header="_XOR" Tag="btnXOR" Click="createGate"></MenuItem>
+                    </MenuItem>
+                </ContextMenu>
+            </Canvas.ContextMenu>
+        </Canvas>
+
+        <Menu VerticalAlignment="Top" Background="#333333" VerticalContentAlignment="Center" Grid.ColumnSpan="4" Height="28">
+            <MenuItem HorizontalContentAlignment="Center">
+                <MenuItem.Header>
+                    <AccessText Foreground="#8E8E8E" FontSize="12" VerticalAlignment="Center" Margin="5">_File</AccessText>
+                </MenuItem.Header>
+
+                <MenuItem Header="_New"></MenuItem>
+                <MenuItem Header="_Open"></MenuItem>
+                <MenuItem Header="_Save"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="_Exit"></MenuItem>
+            </MenuItem>
+            <MenuItem HorizontalContentAlignment="Center">
+                <MenuItem.Header>
+                    <AccessText Foreground="#8E8E8E" FontSize="12" VerticalAlignment="Center" Margin="5">_Edit</AccessText>
+                </MenuItem.Header>
+                <MenuItem HorizontalContentAlignment="Center">
+                    <MenuItem.Header>
+                        <AccessText>_Add</AccessText>
+                    </MenuItem.Header>
+                    <MenuItem Header="_AND" Tag="btnAND" Click="createGate"></MenuItem>
+                    <MenuItem Header="_NOT" Tag="btnNOT" Click="createGate"></MenuItem>
+                    <MenuItem Header="_NAND" Tag="btnNAND" Click="createGate"></MenuItem>
+                    <MenuItem Header="_OR" Tag="btnOR" Click="createGate"></MenuItem>
+                    <MenuItem Header="_XOR" Tag="btnXOR" Click="createGate"></MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem HorizontalContentAlignment="Center">
+                <MenuItem.Header>
+                    <AccessText Foreground="#8E8E8E" FontSize="12" VerticalAlignment="Center" Margin="5">_Program</AccessText>
+                </MenuItem.Header>
+                <MenuItem Header="_Help"></MenuItem>
+                <MenuItem Header="_Options"></MenuItem>
+            </MenuItem>
+        </Menu>
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="81*"></ColumnDefinition>
+            <ColumnDefinition Width="53*"></ColumnDefinition>
+            <ColumnDefinition Width="53*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-
-        <Canvas Name="canvas" Background="Aqua" Grid.RowSpan="3" Grid.ColumnSpan="3" PreviewMouseMove="canvasPreviewMouseMove" PreviewMouseUp="canvasPreviewMouseUp">
-            <Button Content="XOR" Canvas.Left="359" Canvas.Top="379" Width="75" Tag="btnXOR" Click="createGate"></Button>
-            <Button Content="OR" Canvas.Left="279" Canvas.Top="379" Width="75" Tag="btnOR" Click="createGate"></Button>
-            <Button Content="NAND" Canvas.Left="199" Canvas.Top="379" Width="75" Tag="btnNAND" Click="createGate"></Button>
-            <Button Content="NOT" Canvas.Left="119" Canvas.Top="379" Width="75" Tag="btnNOT" Click="createGate"></Button>
-            <Button Content="AND" Canvas.Left="39" Canvas.Top="379" Width="75" Tag="btnAND" Click="createGate"></Button>
-
-        </Canvas>
     </Grid>
 </Window>
